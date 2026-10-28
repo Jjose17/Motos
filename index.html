@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101113">
+  <meta name="description" content="Demo interactiva de Sistema Motos: inventario visual y gestión local para negocios de motocicletas.">
+  <title>Sistema Motos · Control de inventario</title>
+  <link rel="preload" as="image" href="assets/hero-moto.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#view-root">Saltar al contenido</a>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Navegación principal">
+      <button class="sidebar-close" id="sidebar-close" type="button" aria-label="Cerrar navegación"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+      <a class="brand" href="#resumen" data-nav="resumen" aria-label="Sistema Motos, resumen">
+        <span class="brand-mark"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M8 25.5 13.8 15h7.5l5.2 10.5M7 25.5h25M13.8 15l-2.2-4m2.2 4h9.1l5.8 10.5M9 25.5a4 4 0 1 0 8 0m10 0a4 4 0 1 0 8 0M22.5 15l3-4h4"/></svg></span>
+        <span class="brand-copy"><b>SISTEMA<span>MOTOS</span></b><small>GESTIÓN COMERCIAL</small></span>
+      </a>
+      <div class="business-switch"><div class="business-avatar">RM</div><div class="business-copy"><strong>Ruta Motor</strong><span>Negocio de ejemplo</span></div><span class="switch-caret" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></div>
+      <div class="nav-caption">ESPACIO DE TRABAJO</div>
+      <nav class="main-nav">
+        <button class="nav-item is-active" data-nav="resumen"><span class="nav-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><span>Resumen</span></button>
+        <button class="nav-item" data-nav="inventario"><span class="nav-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.2-7.2A2 2 0 0 1 3 12V4a1 1 0 0 1 1-1h8a2 2 0 0 1 1.4.6l7.2 7.2a2 2 0 0 1 0 2.6Z"/><circle cx="7.5" cy="7.5" r="1.2"/></svg></span><span>Inventario</span><span class="nav-count" id="nav-count">14</span></button>
+        <button class="nav-item" data-nav="categorias"><span class="nav-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5"/><path d="m3 16 9 5 9-5"/></svg></span><span>Categorías</span></button>
+        <button class="nav-item" data-nav="reportes"><span class="nav-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><span>Reportes</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-tip"><span class="tip-spark" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/></svg></span><strong>Tu inventario, claro.</strong><p>Una vista organizada para cada moto de tu negocio.</p><button data-nav="inventario">Explorar inventario <span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span></button></div>
+        <button class="nav-item" data-nav="configuracion"><span class="nav-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M4 7h9M19 7h1M4 17h3M13 17h7"/><circle cx="16" cy="7" r="2.5"/><circle cx="10" cy="17" r="2.5"/></svg></span><span>Configuración demo</span></button>
+        <div class="profile-row"><div class="profile-avatar">AM</div><div class="profile-copy"><strong>Andrés Mejía</strong><span>Administrador · demo</span></div><span class="profile-more" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="19" cy="12" r="1.4"/></svg></span></div>
+      </div>
+    </aside>
+    <button class="sidebar-scrim" id="sidebar-scrim" type="button" aria-label="Cerrar navegación" tabindex="-1"></button>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button id="mobile-menu" type="button" class="icon-button mobile-menu" aria-label="Abrir navegación" aria-controls="sidebar" aria-expanded="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+        <div class="breadcrumb"><span>Ruta Motor</span><i>/</i><strong id="section-name">Resumen</strong></div>
+        <div class="topbar-actions"><span class="demo-pill"><span></span> MODO DEMOSTRACIÓN</span><button class="top-avatar" type="button" aria-label="AM, perfil de demostración">AM</button></div>
+      </header>
+      <div id="view-root" class="view-root" tabindex="-1"></div>
+      <footer class="app-footer"><span>© 2026 Sistema Motos</span><span><i class="footer-dot"></i> Entorno local · Datos ilustrativos</span></footer>
+    </main>
+  </div>
+  <dialog id="app-dialog" class="app-dialog" aria-labelledby="dialog-title"><div id="dialog-content"></div></dialog>
+  <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="false"></div>
+  <noscript><p style="padding:24px;color:#f0f1f1;background:#101113">Sistema Motos necesita JavaScript habilitado para mostrar la demo interactiva.</p></noscript>
+  <script src="js/data.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
